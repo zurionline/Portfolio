@@ -1,0 +1,77 @@
+
+html, body {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background-size: cover;
+  background-image: url(images/download\ \(1\).png);
+}
+p{
+  color:black;
+}
+
+h1{
+  color:black;
+}
+
+figcaption{
+  width: 200px;
+  background-color: white;
+  color:black
+}
+
+.pinkback{
+  background-image: url(images/glitter.gif)
+}
+
+.boliviaback{
+  background-size: auto 100%;
+  background-image: url(images/bolivia.gif)
+}
+
+.mexicoback{
+  background-size: auto 100%;
+  background-image: url(images/mexico.gif)
+}
+
+
+.pawback{
+  background-color: white;
+}
+
+#player {
+ width: 70%;
+ height: 25px;
+}
+
+.container {
+  position: relative;
+}
+
+audio::-webkit-media-controls-play-button,
+     audio::-webkit-media-controls-panel {
+     background-image: url(dogs/crustydogSMALLEST.gif);
+     color: #ffffff;
+     }
+
+
+.button {
+  background-color: red;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.invert{
+  background-image: url(uhhhhhh.gif)
+}
+
+.invertpinkback{
+  background-image: url(dogs/invertglitter.gif);
+}
+
