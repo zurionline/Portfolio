@@ -5,6 +5,7 @@ html, body {
   text-align: center;
   background-size: cover;
   background-image: url(images/download\ \(1\).png);
+  z-index: 0;
 }
 p{
   color:black;
@@ -75,3 +76,18 @@ audio::-webkit-media-controls-play-button,
   background-image: url(dogs/invertglitter.gif);
 }
 
+/* edited code from https://www.geeksforgeeks.org/css/css-pulse-animation/ */
+        @keyframes pulse {
+            0% {
+                transform: scale(0.7);
+            }
+            50% {
+                transform: scale(0.9);
+            }
+            100% {
+                transform: scale(0.7);
+            }
+        }
+        .pulse {
+            animation: pulse 3s steps(15, end) infinite;
+        }
