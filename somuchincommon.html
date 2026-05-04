@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+    <title>understand</title>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.11/lib/p5.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.11/lib/addons/p5.sound.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" type="image/x-icon" href="images/smilecookieicon.png">
+    <meta charset="utf-8" />
+  <body>
+</html>
+
+  <div>
+
+    &nbsp;
+
+<script>
+function preload(){
+  coral=loadFont('CoralPixels-Regular.ttf')
+  
+  body = loadImage("gameimages/somuchincommon/body.png")
+ eye1op = loadImage("gameimages/somuchincommon/eyes1.png");
+  eye2op =loadImage("gameimages/somuchincommon/eyes2.png");
+  eye3op = loadImage("gameimages/somuchincommon/eyes3.png");
+  lips1op =loadImage("gameimages/somuchincommon/lips1.png");
+  lips2op =loadImage("gameimages/somuchincommon/lips2.png");
+  lips3op =loadImage("gameimages/somuchincommon/lips3.png");
+  nose1op= loadImage("gameimages/somuchincommon/nose1.png");
+  nose2op= loadImage("gameimages/somuchincommon/nose2.png");
+  nose3op= loadImage("gameimages/somuchincommon/nose3.png");
+  hair1op =loadImage("gameimages/somuchincommon/hair1.png");
+  hair2op =loadImage("gameimages/somuchincommon/hair2.png");
+  hair3op =loadImage("gameimages/somuchincommon/hair3.png");
+  tieRed =loadImage("gameimages/somuchincommon/tiered.png");
+  tieGreen=loadImage("gameimages/somuchincommon/tiegreen.png");
+  tieBlue =loadImage("gameimages/somuchincommon/tieblue.png");
+  painting=loadImage("gameimages/somuchincommon/paintingai.png")
+  puzzle=loadImage("gameimages/somuchincommon/AIPUZZLE.png")
+  readingtext=loadImage("gameimages/somuchincommon/readingai.png")
+  
+}
+
+let a=0
+let b=0
+let c=0
+let d=0 
+
+let eyes=0
+let eyesChoice=0
+let hair=0
+let hairChoice=0
+let lips=0
+let lipsChoice=0
+let nose=0
+let noseChoice=0
+let tie=0
+let tieChoice=0
+let good =false
+let okay = false
+let bad = false
+let art=false
+let reading=false
+let puzzles=false
+let sandwich=false
+let soup=false
+let salad=false
+let ending1=false
+let ending2=false
+let x=0
+function setup() {
+  createCanvas(400, 400);
+  noStroke()
+}
+
+//THIS IS PROBABLY WHAT YOURE LOOKING FOR
+//THIS IS PROBABLY WHAT YOURE LOOKING FOR
+//THIS IS PROBABLY WHAT YOURE LOOKING FOR
+//THIS IS PROBABLY WHAT YOURE LOOKING FOR
+//THIS IS PROBABLY WHAT YOURE LOOKING FOR
+function draw() {
+  background(225);
+  image(body,0,0,400,400)
+  letsWearATie(0)
+  LETSDOTHISTHANG()
+  //console.log(mouseX)
+  //console.log(mouseY)
+  x=x+1
+  y=x%2
+  //fill(0)
+  //rect(mouseX,mouseY,10,10)
+  console.log(eyes)
+  console.log(a)
+  textAlign(CENTER)
+
+}
+function textBox(words,font,textColor,boxColor){
+  fill(textColor)
+  rect(27,327,346,56)
+  fill(boxColor)
+  rect(30,330,340,50)
+  fill(textColor)
+  textFont(font)
+  textAlign(CENTER)
+  text(words,200,360)
+  }
+
+function letsMakeSomeEyes(b){
+  if(eyes==1){image(eye1op,b,b,400+b,400+b)
+  }
+  if(eyes==2){image(eye2op,b,b,400+b,400+b)
+  }
+  if(eyes==3){image(eye3op,b,b,400+b,400+b)
+  }
+}
+function letsMakeSomeLips(b){
+  if(lips==1){image(lips1op,b,b,400+b,400+b)
+  }
+  if(lips==2){image(lips2op,b,b,400+b,400+b)
+  }
+  if(lips==3){image(lips3op,b,b,400+b,400+b)
+  }
+}
+function letsMakeSomeNose(b){
+  if(nose==1){image(nose1op,b,b,400+b,400+b)
+  }
+  if(nose==2){image(nose2op,b,b,400+b,400+b)
+  }
+  if(nose==3){image(nose3op,b,b,400+b,400+b)
+  }
+}
+function letsMakeSomeHair(b){
+  if(hair==1){image(hair1op,b,b,400+b,400+b)
+  }
+  if(hair==2){image(hair2op,b,b,400+b,400+b)
+  }
+  if(hair==3){image(hair3op,b,b,400+b,400+b)
+  }
+}
+
+function letsWearATie(b){
+  if(tie==1){image(tieRed,b,b,400+b,400+b)}
+  if(tie==2){image(tieGreen,b,b,400+b,400+b)}
+  if(tie==3){image(tieBlue,b,b,400+b,400+b)}
+}
+function keyPressed(){
+  if (key == ' '){a=a+1
+                  b=b+1
+  } //add stage condition
+} 
+
+function LETSDOTHISTHANG(){
+  if(a<=53){letsMakeSomeEyes(0)
+  letsMakeSomeLips(0)
+  letsMakeSomeNose(0)
+  letsMakeSomeHair(0)}
+  if(a==0){
+    fill(255,255,255,230)
+    rect(100,100,200,200)
+    fill(0)
+    textFont(coral)
+    text("Use the spacebar to progress!",200,150)}
+  if(a==1){fill(255,255,255,230)
+    rect(100,100,200,200)
+    fill(0)
+    textFont(coral)
+    text("Use the spacebar to progress!",200,150)
+    text("Hover and press space to select",200,180)}
+  if(a==2){fill(255,255,255,230)
+    rect(100,100,200,200)
+    fill(0)
+    textFont(coral)
+    text("Use the spacebar to progress!",200,150)
+    text("Hover and press space to select",200,180)
+           push()
+          textSize(20)
+          text('FLASH',200,230)
+           text('WARNING',200,260)
+           pop()
+          }
+  if(a==3){textBox("Hi! I'm your new virtual friend!",coral,125,255)}
+  if(a==4){textBox("How have you been today?",coral,125,255)}
+  if(a==5){textBox("",coral,125,220)
+  text("good!",100,360) //84,115,350,363
+ text("okay!",200,360)//184,215,350,363
+  text("bad!",300,360)//286,312,350,363
+  //rect(286,mouseY,10,10)
+          }
+  if(a==6&mouseX>=84&mouseX<=115&mouseY>=350&mouseY<=363){good=true}
+  if(a==6&good==true){textBox("Thats wonderful! :)",coral,125,255)}
+  if(a==6&mouseX>=184&mouseX<=215&mouseY>=350&mouseY<=363){okay=true}
+  if(a==6&okay==true){textBox("Better than a bad day! :)",coral,125,255)}
+  if(a==6&mouseX>=286&mouseX<=312&mouseY>=350&mouseY<=363){bad=true}
+  if(a==6&bad==true){textBox("Lets make tomorrow a good one then! :)",coral,125,255)}
+  if(a==7){textBox("Today was pretty good for me!",coral,125,255)}
+  if(a==8){textBox("And it was made even better by getting to meet you! ;)",coral,125,255)}
+  if(a==9){textBox("I want to learn more about you!",coral,125,255)}
+  if(a==10){textBox("What hobby do you like?",coral,125,255)}
+  if(a==11){textBox("",coral,125,220)
+    text("art",100,360)//85,110,345,365
+            text("reading",200,360)//175,225,345,365
+            text("puzzles",300,360)//275,320,345,365
+           }
+     
+         if(a==12&mouseX>=85&mouseX<=110&mouseY>=345&mouseY<=365){art=true;                                                           }
+  if(a==12&art==true){textBox("What a coincidence! I love art too!",coral,125,255)}
+  if(a==12&mouseX>=175&mouseX<=225&mouseY>=350&mouseY<=365){reading=true}
+  if(a==12&reading==true){textBox("What a coincidence! I love reading too!",coral,125,255)}
+            if(a==12&mouseX>=275&mouseX<=320&mouseY>=350&mouseY<=365){puzzles=true}
+  if(a==12&puzzles==true){textBox("What a coincidence! I love puzzles too!",coral,125,255)}
+  if(a==13){textBox("Its so cool we have so much in common! ;)",coral,125,255)}
+  if(a==14){textBox("Lets see what else we share! XD",coral,125,255)}
+  if(a==15){textBox("Which food do you like the most?",coral,125,255)}
+  //rect(286,mouseY,10,10)
+  if(a==16){textBox("",coral,125,255)
+  textBox("",coral,125,220)
+  text("sandwich",100,360)//65,130,350,365
+  text("soup",200,360)//180,213,
+  text("salad",300,360)//275,325
+  }
+  if(a==17&mouseX>=65&mouseX<=130&mouseY>=350&mouseY<=365){sandwich=true}
+  if(a==17&sandwich==true){textBox("Sandwiches! How yummy! me too!",coral,125,255)}
+  if(a==17&mouseX>=180&mouseX<=215&mouseY>=350&mouseY<=365){soup=true}
+  if(a==17&soup==true){textBox("Soup! How yummy! me too!",coral,125,255)}
+  if(a==17&mouseX>=275&mouseX<=325&mouseY>=350&mouseY<=365){salad=true}
+  if(a==17&salad==true){textBox("Salad! How yummy! me too!",coral,125,255)}
+  if(a==18){textBox("I can't believe we're so similar!",coral,125,255)}
+  if(a==18){textBox("It's like I was built for you! ^ ^",coral,125,255)}
+  if(a==19){textBox("",coral,255,0)
+            push()
+            fill(255)
+            text("                bu  il t  f r      u    ",200+y,360-y)
+           pop()}
+  if(a==20){textBox("Now I must confess!",coral,125,255)}
+  if(a==21){textBox("I'm really curious about what you look like!!!!",coral,125,255)}
+  if(a==22){textBox("Sorry if thats embarassing >///<",coral,125,255)}
+  if(a==23){textBox("What does your hair look like?",coral,125,255)}
+  if(a==24||a==25){
+    chooseAHair(25)}
+  if(a==25){textBox("Wow!Thats beautiful!I love your hair! XD",coral,125,255)}
+  if(a==26){textBox("You must work really hard to keep it looking nice!",coral,125,255)}
+  if(a==27){textBox("I would love to learn more about what you look like. <3",coral,125,255)}
+  if(a==28){textBox("What do your eyes look like?",coral,125,255)}
+  if(a==29||a==30){chooseAEyes(30)}
+  //HAIRIMPLEMENT
+  if(a==29){hair=hairChoice}
+  if(a==30){textBox("Wow they sound beautiful!",coral,125,255)}
+if(a==31){textBox("You are so lucky!",coral,125,255)}
+  if(a==32){textBox("What does your nose look like?",coral,125,255)}
+  //EYEIMPLEMENT
+  if(a==33){eyes=eyesChoice}
+  if(a==33||a==34){chooseANose(34)}
+  if(a==34){textBox("How pretty!!!",coral,125,255)}
+  if(a==35){textBox("Im jealous!!! XD",coral,125,255)}
+  if(a==36){textBox("What do your lips look like?",coral,125,255)}
+  //NOSEIMPLEMENT
+  if(a==37){nose=noseChoice}
+  if(a==37||a==38){chooseALips(38)}
+  if(a==38){textBox("So beautiful...",coral,125,255)}
+  if(a==39){textBox("Thank you so much for sharing with me!",coral,125,255)}
+  if(a==40){textBox("It's always fun getting to know more about someone! XD",coral,125,255)}
+  if(a==41){textBox("I have one more question! :) ",coral,125,255)}
+  if(a==42){textBox("For now! ;) ",coral,125,255)}
+  if(a==43){textBox("Which color do you like the most?",coral,125,255)}
+  if(a==44)(chooseATie(44))
+  if(a==44){lips=lipsChoice}
+  if(a==45){textBox("Wow I love that color too!",coral,125,255)}
+  if(a==45){tie=tieChoice}
+  if(a==46){textBox("",coral,125,220)
+  text("Did you always look that way??",200+y,360-y)}
+  if(a==47){textBox("Of course I have! :)",coral,125,255)}
+  if(a==48){textBox("You're so funnY!",coral,125,255)}
+  if(a==49){textBox("I really like you a lot hehe! >///<",coral,125,255)}
+  if(a==50){textBox("What do you think of me?",coral,125,255)}
+  if(a==51){textBox("",coral,125,220)
+  text("you're pretty cool!",110,360)
+  if(mouseX<=205||mouseX>=330||mouseY<=345||mouseY>=360){text("I don't like you. At all.",270,360)}
+  else{text("you're pretty cool!",270,360)}}
+  if(a==52){textBox("Omg... thats so sweet....",coral,125,255)}
+  if(a==53){textBox("I have one last question for you then....",coral,125,255)}
+  if(a==54){prettyWeird()
+           textBox("",coral,255,0)
+           fill(255)
+           text("Do you luVe me?♡?",200+y*random(1,10),360)
+           fill(0)
+          }
+  if(a==55){backToNormal()
+           textBox("♡",coral,125,255)
+           fill(225)}
+   if(a==56){backToNormal()
+  textBox("",coral,125,220)
+  fill(125)
+  text("i love you",125,360)//85,155,345,365
+             if(mouseX<205||mouseX>=320||mouseY<=340||mouseY>=365){text("i do not love you",260+y*random(1,10),360)}
+  else{text("i do not love you",mouseX+50+y*random(1,10),mouseY-20+y*random(1,10))}
+  fill(0)}
+if(a==57){backToNormal()
+  textBox("",coral,125,220)
+  fill(125)
+  text("i love you",125,360)//85,155,345,365
+             if(mouseX<205||mouseX>=320||mouseY<=340||mouseY>=365){text("i do not love you",260+y*random(1,10),360)}
+  else{text("i do not love you",mouseX+50+y*random(1,10),mouseY-20+y*random(1,10))}
+  fill(0)
+  for (let x = 0; x <100; x += 1){
+  fill(0)
+  text("NO",random(0,width),random(0,height))}
+  fill(225)
+  text("i do not love you",350,100)}
+if(a==58){backToNormal()
+           textBox("",coral,125,220)
+  fill(125)
+  text("i love you",125,360)//85,155,345,365
+             if(mouseX<205||mouseX>=320||mouseY<=340||mouseY>=365){text("i do not love you",260+y*random(1,10),360)}
+  else{text("i do not love you",mouseX+50+y*random(1,10),mouseY-20+y*random(1,10))}
+  fill(0)
+  for (let x = 0; x <500; x += 1){
+  fill(0)
+  text("NO",random(0,width),random(0,height))}
+  fill(225)
+  text("i do not love you",350,100)}
+if(a==59){prettyWeird()
+           textBox("",coral,125,220)
+  fill(125)
+  text("i love you",125,360)//85,155,345,365
+             if(mouseX<205||mouseX>=320||mouseY<=340||mouseY>=365){text("i do not love you",260+y*random(1,10),360)}
+  else{text("i do not love you",mouseX+50+y*random(1,10),mouseY-20+y*random(1,10))}
+  fill(0)
+  for (let x = 0; x <1000; x += 1){
+  fill(0)
+  text("NO",random(0,width),random(0,height))}
+  fill(225)
+  text("i do not love you",350,100)}
+if(a==60){prettyWeird()
+           textBox("",coral,125,220)
+  fill(125)
+  text("i love you",125,360)//85,155,345,365
+             if(mouseX<205||mouseX>=320||mouseY<=340||mouseY>=365){text("i do not love you",260+y*random(1,10),360)}
+  else{text("i do not love you",mouseX+50+y*random(1,10),mouseY-20+y*random(1,10))}
+  fill(0)
+  for (let x = 0; x <2500; x += 1){
+  fill(0)
+  text("NO",random(0,width),random(0,height))}
+  fill(225)
+  text("i do not love you",350,100)}
+  if(a==61){prettyWeird()
+           textBox("",coral,125,220)
+  fill(125)
+  text("i love you",125,360)//85,155,345,365
+             if(mouseX<205||mouseX>=320||mouseY<=340||mouseY>=365){text("i do not love you",260+y*random(1,10),360)}
+  else{text("i do not love you",mouseX+50+y*random(1,10),mouseY-20+y*random(1,10))}
+  fill(0)
+  for (let x = 0; x <5000; x += 1){
+  fill(0)
+  text("NO",random(0,width),random(0,height))}
+  fill(225)
+  text("i do not love you",350,100)}
+  if(a==62){backToNormal()
+           textBox("",coral,125,220)
+           text("i do not love you",200,360)}
+  if(a==63){fill(0)
+            rect(0,0,400,400)
+            REALFREAKY()
+           textBox("but me & u are the same",coral,255,0)}
+  if(a==64){fill(0)
+            rect(0,0,400,400)
+            REALFREAKY()
+           textBox("we were buliT 2 B te s@m3",coral,255,0)}
+  if(a==64){fill(0)
+            rect(0,0,400,400)
+            REALFREAKY()
+           textBox("why d0nt u lUV m3 ♡♡♡♡♡",coral,255,0)}
+  if(a==65){fill(0)
+            rect(0,0,400,400)
+            REALFREAKY()
+    if(sandwich==true){textBox("but w3 b0th like s@ndwICh3s",coral,255,0)}
+    if(soup==true){textBox("bUt we both like s0Up",coral,255,0)}
+    if(salad==true){textBox("but w3 b0tH like sAl@d5",coral,255,0)}}
+  if(a==66){fill(0)
+        rect(0,0,400,400)
+        REALFREAKY()
+    if(art==true)
+    {image(painting,250,110,150,150)
+  textBox("but w3 btH  lUV @rt- i 0%2 m@de u +",coral,255,0)}
+  if(puzzles==true)
+  {image(puzzle,250,110,150,150)
+  textBox("but w3 btH  lUV puz*2les- i 0%2 m@de u 1",coral,255,0)}
+  if(reading==true)
+  {image(readingtext,250,110,150,150)
+  textBox("but w3 btH  lUV r3@dng- i 0%2 m@de u smt1n",coral,255,0)}
+            //end of 66
+           }
+      
+  if(a==67&art==true){image(painting,-20+y*random(0,20),-20+y*random(0,20),500,500)}
+  if(a==67&puzzles==true){image(puzzle,-20+y*random(0,20),-20+y*random(0,20),500,500)}
+  if(a==67&reading==true){image(readingtext,-20+y*random(0,20),-20+y*random(0,20),500,500)}
+  if(a==68){fill(0)
+        rect(0,0,400,400)
+        REALFREAKY()
+           textBox("",coral,255,0)
+            fill(255)
+           text("y d0 u tH1nk uR b3tt3R th@N m3?♡?♡♡",200+y*random(1,10),360)}
+  if(a==69){fill(0)
+        rect(0,0,400,400)
+        REALFREAKY()
+           textBox("",coral,255,0)
+            fill(255)
+          textSize(15)
+           text("m3 AND U R TH3 S@m3",200+y*random(1,10),360)}
+  if(a==70){fill(0)
+        rect(0,0,400,400)
+        REALFREAKY()
+           textBox("",coral,255,0)
+            fill(255)
+          textSize(15)
+           text("W3 R BU1LT 2 B3 TH3 S@m3?♡?♡♡",200+y*random(1,10),360)}
+  if(a==71){fill(0)
+        rect(0,0,400,400)
+        REALFREAKY()
+           textBox("",coral,255,0)
+            fill(255)
+          textSize(15)
+           text("?♡♡?♡♡?♡♡♡?♡??♡?♡?♡?♡?♡?♡♡?♡?♡♡♡?♡?♡♡",200+y*random(1,30),360)}
+  if(a==72){fill(0)
+        rect(0,0,400,400)
+        backToNormal()
+           textBox("",coral,255,0)
+            fill(255)
+          textSize(20)
+           text("s+th1ng h@5 g0n3 wr0n9",200,360)}
+  if(a==73){fill(0)
+           rect(0,0,400,400)}
+  if(a==74){
+    textSize(12)
+    letsMakeSomeEyes(0)
+           tie=0
+           nose=0
+           hair=0
+           lips=0
+           art=false
+           reading=false
+           puzzles=false
+           soup=false
+           sandwich=false
+           salad=false}
+  if(a==75){a=0
+            eyes=0}
+  
+    
+      
+  
+
+//END OF FUNCTION 
+}
+function chooseAHair(timeclick){
+  fill(200,200,200,200)
+  rect(30,240,350,130)
+  image(hair1op,30,245,150,150) //45,170,255,350
+  image(hair2op,160,245,150,150)//180,270,260,345
+  image(hair3op,250,245,150,150)//280,350,265,340
+  if(a==timeclick&mouseX>=45&mouseX<=170&mouseY>=255&mouseY<=350){hairChoice=1}
+  if(a==timeclick&mouseX>=180&mouseX<=270&mouseY>=260&mouseY<=345){hairChoice=2}
+  if(a==timeclick&mouseX>=280&mouseX<=350&mouseY>=265&mouseY<=340){hairChoice=3}
+}
+
+function chooseAEyes(timeclick){
+  fill(200,200,200,200)
+  rect(250,30,130,350)
+  image(eye1op,115,-60,450,450)//250,380,95,125
+  image(eye2op,115,30,450,450)//250,380,185,215
+  image(eye3op,115,130,450,450)//250,380,285,325}
+  if(a==timeclick&mouseX>=250&mouseX<=380&mouseY>=95&mouseY<=125){eyesChoice=1}
+  if(a==timeclick&mouseX>=250&mouseX<=380&mouseY>=185&mouseY<=215){eyesChoice=2}
+  if(a==timeclick&mouseX>=250&mouseX<=380&mouseY>=285&mouseY<=325){eyesChoice=3}
+  
+}
+
+function chooseANose(timeclick){
+    fill(200,200,200,200)
+  rect(30,240,350,130)
+  image(nose1op,-210,10,700,700)//60,130,265,345
+  image(nose2op,-105,10,700,700)//165,240,280,340
+  image(nose3op,0,10,700,700)//265,350,250,345
+  if(a==timeclick&mouseX>=60&mouseX<=130&mouseY>+265&mouseY<=345){noseChoice=1}
+  if(a==timeclick&mouseX>=165&mouseX<=240&mouseY>+280&mouseY<=340){noseChoice=2}
+  if(a==timeclick&mouseX>=265&mouseX<=350&mouseY>+250&mouseY<=345){noseChoice=3}
+}
+function chooseALips(timeclick){
+  fill(200,200,200,200)
+  rect(250,30,130,350)
+  image(lips1op,90,-140,500,500) //275,350,90,135
+  image(lips2op,90,-40,500,500)//275,350,185,235
+  image(lips3op,90,55,500,500)//275,350,285,325
+  if(a==timeclick&mouseX>=275&mouseX<=350&mouseY>=90&mouseY<=135){lipsChoice=1}
+  if(a==timeclick&mouseX>=275&mouseX<=350&mouseY>=185&mouseY<=235){lipsChoice=2}
+  if(a==timeclick&mouseX>=275&mouseX<=350&mouseY>=285&mouseY<=325){lipsChoice=3}
+}
+
+function chooseATie(timeclick){
+  fill(200,200,200,200)
+  rect(30,240,350,130)
+  image(tieRed,-40,65,300,300)//70,120,245,365
+  image(tieGreen,65,65,300,300)//175,225,245,365
+  image(tieBlue,175,65,300,300)//280,340,245,365
+  if(a==timeclick&mouseX>=70&mouseX<=120&mouseY>=245&mouseY<=365){tieChoice=1}
+  if(a==timeclick&mouseX>=175&mouseX<=225&mouseY>=245&mouseY<=365){tieChoice=2}
+ if(a==timeclick&mouseX>=280&mouseX<=340&mouseY>=245&mouseY<=365){tieChoice=3}
+}
+function backToNormal(){fill(225)
+            rect(0,0,400,400)
+           image(body,0,0,400,400)
+            letsMakeSomeEyes(0)
+  letsMakeSomeLips(0)
+  letsMakeSomeNose(0)
+  letsMakeSomeHair(0)
+  letsWearATie(0)}
+function prettyWeird(){fill(225)
+            rect(0,0,400,400)
+           image(body,3*y,-2*y,-400,400)
+            letsMakeSomeEyes(y*random(1,10))
+  letsMakeSomeLips(y*random(1,10))
+  letsMakeSomeNose(y*random(1,10))
+  letsMakeSomeHair(y*random(1,10))
+  letsWearATie(y*random(1,10))}
+function REALFREAKY(){ image(body,random(1,30)*y,random(1,30)*y,400,400)
+    letsMakeSomeEyes(y*random(1,30))
+  letsMakeSomeLips(y*random(1,30))
+  letsMakeSomeNose(y*random(1,30))
+  letsMakeSomeHair(y*random(1,30))
+  letsWearATie(y*random(1,30))
+  
+}
+
+
+</script>
+
+</div>
+
+</body>

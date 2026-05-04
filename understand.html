@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+    <title>understand</title>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.11/lib/p5.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.11/lib/addons/p5.sound.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" type="image/x-icon" href="images/smilecookieicon.png">
+    <meta charset="utf-8" />
+  <body>
+</html>
+
+  <div>
+
+    &nbsp;
+
+<script>
+  //Collecting scraps of misunderstanding 
+//To make sense of it all
+//Unspoken words
+//I'm supposed to understand
+
+let poem = ["Collecting",
+            "scraps",
+            "of",
+           "misunderstandings",
+           "to",
+           "make",
+           "sense",
+           "of",
+           "it",
+           "all",
+           "Unspoken",
+           "words",
+           "I'm",
+           "supposed",
+           "to",
+           "understand"]
+let count=0
+
+let randomPoem = [];
+let font;
+
+let y =0
+function preload() {
+  font = loadFont('CoralPixels-Regular.ttf');
+}
+
+
+
+
+function setup() {
+  createCanvas(400, 400);
+  //console.log(poem[0]);
+  background(0,0,255,200)
+}
+
+function draw() {
+  //text(poem[0],0,200);
+  textFont(font);
+  textSize(15);
+  fill(255)
+  textAlign(CENTER,CENTER)
+  text("how badly do you want to understand?",200,170)
+  y=y+1
+  if(y>300){text("not at all since you haven't tried",200,210)}
+  textAlign(LEFT,CENTER);
+  textSize(100)
+  fill(255,255,255)
+  text("?",mouseX-10,mouseY-25)
+  textSize(20)
+  fill(0,0,225,count/15)
+  text("Collecting scraps of misunderstanding",20,50)
+  text("to make sense of it all",20,135)
+  text("Unspoken words I'm supposed",20,225)
+  text("to understand",20,315)
+  
+  fill(255,0,0)
+  textAlign(RIGHT, CENTER);
+  let oldSpot=10
+  let x= 10
+  fill(0)
+  for(let i =0;i<randomPoem.length;i++){
+    let bbox = font.textBounds(randomPoem[i], 10, 10);
+    newSpot=oldSpot+bbox.w+10
+    text(randomPoem[i],newSpot,x)
+    if(newSpot+oldSpot+bbox.w>width&x<90){x=90
+                   oldSpot=10}
+    else if(newSpot+oldSpot+bbox.w>width&x==90&x<180){x=180
+                    oldSpot=10}
+    else if(newSpot+oldSpot+bbox.w>width&x==180){x=270
+                                oldSpot=10}
+    else if(newSpot+oldSpot+bbox.w>width&x==270)    {x=360
+                                oldSpot=10}
+    else
+    (oldSpot=newSpot)
+  } //the ++ is += 1
+}
+
+function mousePressed(){
+  randomPoem = [];
+  let tempPoem=[]
+  tempPoem = poem.slice()
+  count = count+1
+  
+  
+for(let i =0; i <poem.length;i++){
+  let randomLine = int(random(0,tempPoem.length));
+  randomPoem.push(tempPoem[randomLine]);
+  tempPoem.splice(randomLine,1);
+  
+}
+}
+</script>
+
+</div>
+
+</body>
